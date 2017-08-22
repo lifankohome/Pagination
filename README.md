@@ -9,11 +9,11 @@ Paginate list easily.
 
 > `$paginate->pages(-c-);`
 
--a-(num) : The total num of pages.
+  * -a-(num) : The total num of pages.
 
--b-(String) : The url to go when you click the button.
+  * -b-(String) : The url to go when you click the button.
 
--c-(num) : Current page.
+  * -c-(num) : Current page.
 
 # Extra:
   
@@ -24,8 +24,8 @@ Paginate list easily.
   
 setPageNib: You can set how many button to show;
 
-  if setPageNib(1), except the current page(eg:10), [9],10,[11] would be shown.
+  *  if setPageNib(1), except the current page(eg:10), [9],10,[11] would be shown.
   
-  if setPageNib(3), except the current page(eg:10), [7,8,9],10,[11,12,13] would be shown.
+  *  if setPageNib(3), except the current page(eg:10), [7,8,9],10,[11,12,13] would be shown.
   
-  ...
+  *  ...
