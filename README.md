@@ -10,5 +10,7 @@ Paginate list easily.
 > `$paginate->pages(-c-);`
 
 -a-(num) : The total num of pages.
+
 -b-(String) : The url to go when you click the button.
+
 -c-(num) : Current page.
