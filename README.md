@@ -25,5 +25,7 @@ Paginate list easily.
 setPageNib: You can set how many button to show;
 
   if setPageNib(1), except the current page(eg:10), [9],10,[11] would be shown.
+  
   if setPageNib(3), except the current page(eg:10), [7,8,9],10,[11,12,13] would be shown.
+  
   ...
