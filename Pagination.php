@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: lifanko  lee
- * Date: 2017/8/21
- * Time: 14:23
+ * Author: lifanko
+ * GitHub: https://github.com/lifankohome/Pagination
  */
-namespace inc\Pagination;
+
+namespace lifanko;
 
 class Pagination
 {
@@ -14,9 +13,9 @@ class Pagination
     private $url = "";
     private $url_suf = "";
 
-    public function __construct($pageAll, $url)
+    public function __construct($total, $pageSize, $url)
     {
-        $this->page_all = $pageAll;
+        $this->page_all = ceil($total / $pageSize);
         $this->url = $url;
     }
 
@@ -47,33 +46,33 @@ class Pagination
                 }
                 if ($i < $page - $this->page_nib - ($buf_page)) {
                     if ($i == $page - ($this->page_nib + 1) - $buf_page) {
-                        echo "<li><a href={$this->url}{$pre_page}{$this->url_suf}>上一页</a></li>";
+                        echo "<li><a href='{$this->url}{$pre_page}{$this->url_suf}>上一页</a></li>";
                     }
                     continue;
                 } else {
                     if ($i > $page + $this->page_nib) {
                         if ($i == $page + $this->page_nib + 1) {
-                            echo "<li><a href={$this->url}{$nex_page}{$this->url_suf}>下一页</a></li>";
+                            echo "<li><a href='{$this->url}{$nex_page}{$this->url_suf}'>下一页</a></li>";
                         }
                         continue;
                     }
                     if ($i == $page) {
-                        echo "<li><a style='color: #f40' href={$this->url}{$i}{$this->url_suf}><b>$i</b></a></li>";
+                        echo "<li><a style='color: #f40' href='{$this->url}{$i}{$this->url_suf}'><b>$i</b></a></li>";
                     } else {
-                        echo "<li><a href={$this->url}{$i}{$this->url_suf}>$i</a></li>";
+                        echo "<li><a href='{$this->url}{$i}{$this->url_suf}'>$i</a></li>";
                     }
                 }
             } else {
                 if ($i > 2 * $this->page_nib + 1) {
                     if ($i == 2 * ($this->page_nib + 1)) {
-                        echo "<li><a href={$this->url}{$nex_page}{$this->url_suf}>下一页</a></li>";
+                        echo "<li><a href='{$this->url}{$nex_page}{$this->url_suf}'>下一页</a></li>";
                     }
                     continue;
                 }
                 if ($i == $page) {
-                    echo "<li><a style='color: #f40' href={$this->url}{$i}{$this->url_suf}><b>$i</b></a></li>";
+                    echo "<li><a style='color: #f40' href='{$this->url}{$i}{$this->url_suf}'><b>$i</b></a></li>";
                 } else {
-                    echo "<li><a href={$this->url}{$i}{$this->url_suf}>$i</a></li>";
+                    echo "<li><a href='{$this->url}{$i}{$this->url_suf}'>$i</a></li>";
                 }
             }
         }

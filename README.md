@@ -1,25 +1,42 @@
 # Pagination
-Paginate list very easily.
+Manage the pagination of list easily.
 
-## How to use:
-
- + include "Paginate.php";
- + $paginate = new inc\Pagination\Pagination(-a-,-b-);
- + $paginate->pages(-c-);
+## How to use
 
 ```
--a-(num) : The total num of pages.
--b-(String) : The url to go when you click the button.
--c-(num) : Current page.
+include "Paginate.php";
+
+$pagination = new lifanko\Pagination($total, $pageSize, $url);
+$pagination->pages($page);
+
+------------------------------------------------------
+ 
+$total   : number - The total number of list.
+$pageSize: string - The item number of each page.
+$url     : number - Url of buttons.
+$page    : number - Figure out which page to show.
 ```
 
-## Detail functions:
+## Example
+
+```
+$pagination = new lifanko\Pagination(110, 20, 'index.php?page=');
+$pagination->pages(4);
+```
+
+Output:
+
+```
+<li><a href='index.php?page=1'>1</a></li>
+<li><a href='index.php?page=2'>2</a></li>
+<li><a href='index.php?page=3'>3</a></li>
+<li><a style='color: #f40' href='index.php?page=4'><b>4</b></a></li>
+<li><a href='index.php?page=5'>5</a></li>
+<li><a href='index.php?page=6'>6</a></li>
+```
+
+## Other Functions
 
  + setUrl
  + setUrlSuf
  + setPageNib(default 7)
- + setPageNib: You can set how many button to be shown.
- 
-> if setPageNib(1), except the current page(eg:10), [9], 10, [11] would be shown.
-
-> if setPageNib(3), except the current page(eg:10), [7, 8, 9], 10, [11, 12, 13] would be shown.
